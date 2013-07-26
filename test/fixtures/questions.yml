@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  topic: MyString
+  question: MyText
+  status: false
+
+two:
+  topic: MyString
+  question: MyText
+  status: false
