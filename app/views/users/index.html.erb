@@ -1,37 +1,28 @@
-<h1>Listing users</h1>
-
-<table class="table table-condensed table-bordered table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Photo url</th>
-
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.photo_url %></td>
-
-        <td><%= link_to 'Edit', edit_user_path(user), :class=>"btn btn-primary" %>
-        <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger"  %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
 <br>
-
-<table >
-  <thead>
+<h1>HackerYou Students</h1>  <table>
     <tr>
       <td><%= link_to 'Questions', questions_path, :class=>"btn" %></td>
       <td><%= link_to 'Add User', new_user_path, :class=>"btn btn-primary" %></td>
       <td><%= link_to 'Teachers', teachers_path, :class=>"btn" %></td>
     </tr>
 </table>
+<br>
+
+    <% @users.each do |user| %>
+      <div class="thumbnail span2">
+        
+            <%= image_tag(user.photo_url, class: 'img-rounded') %>
+            <%= user.name %><br>
+            <%= link_to 'Edit', edit_user_path(user), :class=>"btn btn-primary" %>
+            <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger"  %>
+        
+      </div>
+    <% end %>
+
+
+<br>
+
+
+
 
 
