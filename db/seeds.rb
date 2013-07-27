@@ -41,10 +41,10 @@ User.create(name: "Tyler Sangster", photo_url: "people/tyler.png")
 
 Teacher.delete_all
 
-Teacher.create(name:"Edward Ocampo-Gooding" photo_url:"people/edward.png")
+Teacher.create(name:"Edward Ocampo-Gooding" photo_url: "people/edward.png")
 # teacher.create(name:"Lana Lodge" photo_url:"")
 # teacher.create(name:"Lydia Krupp-Hunter" photo_url:"")
-Teacher.create(name:"Michael Prendergast" photo_url:"people/mikep.png")
-Teacher.create(name:"Mike Williamson" photo_url:"people/mikew.png")
-Teacher.create(name:"Nick Small" photo_url:"people/nick.png")
+Teacher.create(name:"Michael Prendergast" photo_url: "people/mikep.png")
+Teacher.create(name:"Mike Williamson" photo_url: "people/mikew.png")
+Teacher.create(name:"Nick Small" photo_url: "people/nick.png")
 # teacher.create(name:"Serena Ngai" photo_url:"")
