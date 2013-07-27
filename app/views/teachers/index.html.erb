@@ -1,12 +1,12 @@
 <h1>Listing teachers</h1>
 
-<table class="table">
+<table class="table table-condensed table-bordered table-striped table-hover">
   <thead>
     <tr>
       <th>Name</th>
       <th>Photo url</th>
       <th></th>
-      <th></th>
+
       <th></th>
     </tr>
   </thead>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= teacher.name %></td>
         <td><%= teacher.photo_url %></td>
-        <td><%= link_to 'Show', teacher %></td>
-        <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
-        <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td><%= link_to 'Edit', edit_teacher_path(teacher), :class=>"btn btn-primary" %></td>
+        <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-danger"  %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,12 @@
 
 <br>
 
-<%= link_to 'New Teacher', new_teacher_path %>
+<table >
+  <thead>
+    <tr>
+      <td><%= link_to 'Questions', questions_path, :class=>"btn" %></td>
+      <td><%= link_to 'Users', users_path, :class=>"btn" %></td>
+      <td><%= link_to 'Add Teacher', new_teacher_path, :class=>"btn btn-primary" %></td>
+    </tr>
+</table>
+

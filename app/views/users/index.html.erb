@@ -1,12 +1,11 @@
 <h1>Listing users</h1>
 
-<table class="table">
+<table class="table table-condensed table-bordered table-striped table-hover">
   <thead>
     <tr>
       <th>Name</th>
       <th>Photo url</th>
-      <th></th>
-      <th></th>
+
       <th></th>
     </tr>
   </thead>
@@ -16,9 +15,9 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.photo_url %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td><%= link_to 'Edit', edit_user_path(user), :class=>"btn btn-primary" %>
+        <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger"  %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +25,13 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<table >
+  <thead>
+    <tr>
+      <td><%= link_to 'Questions', questions_path, :class=>"btn" %></td>
+      <td><%= link_to 'Add User', new_user_path, :class=>"btn btn-primary" %></td>
+      <td><%= link_to 'Teachers', teachers_path, :class=>"btn" %></td>
+    </tr>
+</table>
+
+
