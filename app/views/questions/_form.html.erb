@@ -21,11 +21,11 @@
   </div>
   <div class="control-group">
     <div class="control-label" ><%= f.label :user %></div>
-    <div class="controls" ><%= collection_select(:question, :user_id, User.all, :id, :name) %></div>
+    <div class="controls" ><%= collection_select(:question, :user_id, User.all, :id, :name, {:prompt=>true}) %></div>
   </div>
   <div class="control-group">
     <div class="control-label" ><%= f.label :teacher %></div>
-    <div class="controls" ><%= collection_select(:question, :teacher_id, Teacher.all, :id, :name) %></div>
+    <div class="controls" ><%= collection_select(:question, :teacher_id, Teacher.all, :id, :name, {:prompt=>true}) %></div>
   </div>
 
 

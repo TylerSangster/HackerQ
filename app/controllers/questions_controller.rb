@@ -4,12 +4,14 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    @questions = Question.includes(:user).all
   end
 
   # GET /questions/1
   # GET /questions/1.json
   def show
+
+
   end
 
   # GET /questions/new
@@ -26,7 +28,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     @users = User.all
-    @teacher = Teacher.all
+    @teachers = Teacher.all
     respond_to do |format|
       if @question.save
         format.html { redirect_to @question, notice: 'Question was successfully created.' }
@@ -70,6 +72,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:topic, :question, :status)
+      params.require(:question).permit(:topic, :question, :status, :user_id, :teacher_id)
     end
 end

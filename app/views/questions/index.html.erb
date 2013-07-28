@@ -9,11 +9,12 @@
     </tr>
   </table>
 
+
 <br>
 <% @questions.each do |question| %>
    <table class="table">
-   <td><%= image_tag("people/tyler.png", class: 'img-circle') %><br>
-    Tyler Sangster
+   <td><%= image_tag(question.user.photo_url, class: 'img-circle') %><br>
+    <%= question.user.name %>
    </td>
    <td>
   <div class="well span9">
@@ -22,8 +23,10 @@
    </div>
    </td>
    <td>
+  
+
    Answered: <%= question.status %><br>
-   <%= question.created_at %><br>
+   Created:<%= time_ago_in_words(question.created_at) %><br>
    Number:<%= question.id %><br>
    <%= link_to 'Edit', edit_question_path(question), :class=>"btn btn-primary" %>
         <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger" %>
@@ -36,23 +39,27 @@
 <% end %>
 
 
-<!-- <table class="table">
+<table class="table">
   <thead>
     <tr>
 
       <th>Number</th>
+      <th>User_id</th>
+      <th>teacher_id</th>
       <th>Question</th>
       <th>Topic</th>
       <th>Answered</th>
 
       <th></th>
     </tr>
-  </thead> -->
+  </thead> 
 
-  <!-- <tbody>
+  <tbody>
     <% @questions.each do |question| %>
       <tr>
         <td><%= question.id %></td>
+        <td><%= question.user_id %></td>
+        <td><%= question.teacher_id %></td>
         <td><%= question.question %></td>
         <td><%= question.topic %></td>
         <td><%= question.status %></td>
@@ -61,8 +68,8 @@
       </tr>
     <% end %>
   </tbody>
-</table>
- -->
+</table> 
+
 <br>
 
 
