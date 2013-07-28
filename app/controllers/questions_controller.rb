@@ -40,6 +40,7 @@ class QuestionsController < ApplicationController
     end
   end
 
+
   # PATCH/PUT /questions/1
   # PATCH/PUT /questions/1.json
   def update
