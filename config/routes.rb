@@ -1,6 +1,8 @@
 Questify::Application.routes.draw do
   resources :questions
 
+  # post "questions"
+
   resources :teachers
 
   resources :users

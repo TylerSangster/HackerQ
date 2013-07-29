@@ -11,27 +11,28 @@
     </div>
   <% end %>
 
-  <div class="control-group">
-    <div class="control-label"><%= f.label :topic %></div>
-    <div class="controls"><%= f.text_field :topic %></div>
+  <div>
+    <div><%= f.label :topic %></div>
+    <div><%= f.text_field :topic %></div>
   </div>
-  <div class="control-group">
-    <div class="control-label" ><%= f.label :question %></div>
-    <div class="controls" ><%= f.text_area :question %></div>
+  <div>
+    <div><%= f.label :question %></div>
+    <div><%= f.text_area :question %></div>
   </div>
-  <div class="control-group">
-    <div class="control-label" ><%= f.label :user %></div>
-    <div class="controls" ><%= collection_select(:question, :user_id, User.all, :id, :name, {:prompt=>true}) %></div>
+  <div>
+    <div><%= f.label :user %></div>
+    <div><%= collection_select(:question, :user_id, User.all, :id, :name, {:prompt=>true}) %></div>
   </div>
-  <div class="control-group">
-    <div class="control-label" ><%= f.label :teacher %></div>
-    <div class="controls" ><%= collection_select(:question, :teacher_id, Teacher.all, :id, :name, {:prompt=>true}) %></div>
+  <div>
+    <div><%= f.label :teacher %></div>
+    <div><%= collection_select(:question, :teacher_id, Teacher.all, :id, :name, {:prompt=>true}) %></div>
   </div>
+<br>
+
+<%= f.label :status %>
 
 
-  <div class="control-label" >
-    <div class="controls"> 
+
       <%= f.submit :class=>"btn btn-success"%>
-    </div>
-  </div>
+ 
 <% end %>

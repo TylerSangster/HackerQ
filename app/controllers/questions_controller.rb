@@ -55,6 +55,12 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def update_status
+    # Question.update_all(["status = id in (?)", params[:book_ids]])
+    # redirect_to books_path
+  end
+
+
   # DELETE /questions/1
   # DELETE /questions/1.json
   def destroy

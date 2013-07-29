@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Questify</title>
+  <title>Hacker Q</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 </head>
 <body>
+<div class="container-fluid">	
 <div class="header">
 <%= image_tag("hackerQ.png") %>
 </div>
-<%= yield %>
 
+<!-- <div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <a class="brand" href="hackerQ.com">Questions</a>
+    <ul class="nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Users</a></li>
+      <li><a href="#">Teachers</a></li>
+    </ul>
+  </div>
+</div> -->
+
+<%= yield %>
+</div>
 </body>
 </html>
