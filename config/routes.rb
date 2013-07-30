@@ -1,5 +1,9 @@
 Questify::Application.routes.draw do
-  resources :questions
+  resources :questions do 
+    member do
+     get 'answer'
+    end
+  end
 
   # post "questions"
 

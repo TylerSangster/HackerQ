@@ -17,7 +17,7 @@
 
 
 $(document).ready(function(){
-    $('a#button').click(function(){
+    $('.question-state-button').click(function(){
         $(this).toggleClass("down");
     });
 });
