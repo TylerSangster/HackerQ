@@ -4,7 +4,8 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.includes(:user).all
+    #@questions = Question.includes(:user).all
+    @questions = Question.where(status: false)
   end
 
   # GET /questions/1
