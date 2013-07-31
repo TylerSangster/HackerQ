@@ -1,7 +1,7 @@
 Questify::Application.routes.draw do
   resources :questions do 
     member do
-     get 'answer'
+     post 'answer', to: 'questions#answer'
     end
   end
 

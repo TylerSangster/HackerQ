@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
-
+    @question = Question.includes(:user, :teacher).find(params[:id])
 
   end
 
@@ -55,9 +55,15 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def update_status
-    # Question.update_all(["status = id in (?)", params[:book_ids]])
-    # redirect_to books_path
+  def answer
+    @question = Question.includes(:user, :teacher).find(params[:id])
+    if @question.status
+      @question.status = false
+    else
+      @question.status = true
+    end
+    @question.save
+    redirect_to questions_path
   end
 
 

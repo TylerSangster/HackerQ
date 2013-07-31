@@ -1,45 +1,41 @@
 
 <h1>Today's Questions</h1>
-<table >
-  <thead>
-    <tr>
-      <td><%= link_to 'New Question', new_question_path, :class=>"btn btn-primary" %></td>
-      <td><%= link_to 'Users', users_path, :class=>"btn" %></td>
-      <td><%= link_to 'Teachers', teachers_path, :class=>"btn" %></td>
-      <td></td>
-    </tr>
-  </table>
+
 
 
 <br>
-<table class="table">
-<% @questions.each do |question| %>
-  <% tag :tr,  id: dom_id(question) %>
-  <tr id="<%= dom_id(question) %>">
-  <%#=  "<tr id=\'#{dom_id(question)}\'" %> 
-   <td>
-    <%= image_tag(question.user.photo_url, class: 'img-circle') %><br> 
-    <%= question.user.name %>
-   </td>
-   <td>
-  <div class="well span9">
-      <h2><%= question.topic %></h2>
-     <%= question.question %>
-   </div>
-   </td>
-   <td>
+<table class="table table-hover">
+  <% @questions.each do |question| %>
 
 
-
-
-
-   Answered: <%= question.status %><br>
-   Created:<%= time_ago_in_words(question.created_at) %><br>
-   Number:<%= question.id %><br>
-   <%= link_to 'Edit', edit_question_path(question), :class=>"btn btn-primary" %>
-        <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger" %>
-   </td>
- </tr>
+    
+    <% tag :tr,  id: dom_id(question) %>
+    <tr id="<%= dom_id(question) %>">
+      <td>
+        <h4>Question #<%= question.id %></h4>
+        <%= image_tag(question.user.photo_url, class: 'img-circle') %><br> 
+       <h4><%= question.user.name %></h4>
+      </td>
+      <td class="span10">
+        <div class="well">
+          <h3><%= question.topic %></h3>
+          <%= question.question %>
+        </div> 
+        <p>Created: <%= time_ago_in_words(question.created_at) %></p>
+      </td>
+      <td>
+        <h4><%= question.teacher.name %></h4>
+        <%= image_tag(question.teacher.photo_url, class: 'img-circle') %><br> 
+        
+      </td>
+      <td>
+        <%= button_to 'Answered', answer_question_path(question), :class=>"question-state-button" %><br>
+        <%= link_to 'Edit', edit_question_path(question), :class=>"btn btn-primary" %><br>
+        <%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger" %>
+     </td>
+   </tr>
+ 
+    
 <% end %>
 </table> 
 

@@ -1,21 +1,13 @@
-<br>
-<h1>HackerYou Teachers</h1><table >
-  <thead>
-    <tr>
-      <td><%= link_to 'Questions', questions_path, :class=>"btn" %></td>
-      <td><%= link_to 'Users', users_path, :class=>"btn" %></td>
-      <td><%= link_to 'Add Teacher', new_teacher_path, :class=>"btn btn-primary" %></td>
-    </tr>
-</table>
-<br>
+<h1>HackerYou Teachers</h1>
 
     <% @teachers.each do |teacher| %>
-      <div class="thumbnail span3">
+      <div class="thumbnail span2">
         
             <%= image_tag(teacher.photo_url, class: 'img-rounded') %>
-            <%= teacher.name %><br>
+            <center><h5><%= teacher.name %></h5></center>
+            <center>
             <%= link_to 'Edit', edit_teacher_path(teacher), :class=>"btn btn-primary" %>
-            <%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger"  %>
-        
+            <%= link_to 'Delete', teacher, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger"  %>
+            </center>
       </div>
     <% end %>
